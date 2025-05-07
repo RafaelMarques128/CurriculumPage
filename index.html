@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Currículo - Seu Nome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #000000;
+            color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            /* Fundo branco no currículo */
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            /* Bordas arredondadas */
+        }
+
+        .name,
+        .contact {
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            color: #000000;
+            /* Letras dos títulos em preto */
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .contact,
+        .section {
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #000000;
+            /* Texto em preto */
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            border-bottom: 2px solid #000000;
+            /* Traços em preto */
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: #000000;
+            /* Títulos das seções em preto */
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #000000;
+            /* Texto das listas em preto */
+        }
+
+        a {
+            color: #000000;
+        }
+
+        .job,
+        .project {
+            margin-bottom: 15px;
+        }
+
+        .job-title,
+        .project-title {
+            font-weight: bold;
+            color: #000000;
+            /* Títulos de cargos e projetos em preto */
+        }
+
+        .job-period,
+        .project-link {
+            font-size: 0.9em;
+            color: #000000;
+            /* Texto das datas e links em preto */
+        }
+
+        .education {
+            color: #000000;
+            /* Formação Acadêmica com texto preto */
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="curriculo">
+        <h1 class="name">Rafael Souza Marques</h1>
+        <div class="contact">
+            📍 Belo Horizonte – MG · 📞 (31) 99512-7096 · ✉️ rsmarquesprog@gmail.com · 🔗
+            <a href="https://www.linkedin.com/in/rafael-marques-63996817b/?trk=opento_sprofile_topcard"
+                target="_blank">Linkedin</a>
+            · 💻
+            <a href="https://github.com/RafaelMarques128" target="_blank">GitHub</a>
+        </div>
+
+        <div class="section">
+            <h2>Resumo Profissional</h2>
+            <p>Profissional de tecnologia com X anos de experiência em desenvolvimento de sistemas, com foco em
+                [tecnologias]. Apaixonado por resolver problemas e criar soluções eficientes.</p>
+        </div>
+
+        <div class="section">
+            <h2>Habilidades Técnicas</h2>
+            <ul>
+                <li><strong>Linguagens:</strong> Python, JavaScript, Java</li>
+                <li><strong>Frameworks:</strong> React, Node.js, Django</li>
+                <li><strong>Bancos de Dados:</strong> MySQL, MongoDB</li>
+                <li><strong>Ferramentas:</strong> Git, Docker, AWS</li>
+                <li><strong>Metodologias:</strong> Scrum, Kanban</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Experiência Profissional</h2>
+
+            <div class="job">
+                <div class="job-title">Desenvolvedor Full Stack – Nome da Empresa</div>
+                <div class="job-period">Cidade – Mês/Ano Início – Mês/Ano Fim</div>
+                <ul>
+                    <li>Desenvolvi aplicações web com React e Node.js.</li>
+                    <li>Implementei integrações com APIs RESTful e serviços AWS.</li>
+                    <li>Reduzi o tempo de carregamento do sistema em 30%.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-title">Estagiário em TI – Outra Empresa</div>
+                <div class="job-period">Cidade – Mês/Ano Início – Mês/Ano Fim</div>
+                <ul>
+                    <li>Suporte técnico e manutenção de sistemas internos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Formação Acadêmica</h2>
+            <p class="education"><strong>Curso:</strong> Sistemas de Informação – Nome da Universidade (Ano de Início –
+                Ano de Conclusão)</p>
+        </div>
+
+        <div class="section">
+            <h2>Certificações</h2>
+            <ul>
+                <li>AWS Certified Cloud Practitioner – Amazon – 2024</li>
+                <li>Scrum Fundamentals – CertiProf – 2023</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Projetos</h2>
+
+            <div class="project">
+                <div class="project-title">Sistema de Controle de Tarefas</div>
+                <div class="project-link">🔗 github.com/seuusuario/tarefas</div>
+                <p>Aplicação para gerenciamento de tarefas com autenticação e banco de dados, feita em Django + React.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById('curriculo');
+
+            // Filtrando apenas os dados do currículo
+            const contentForPDF = element.cloneNode(true);
+            contentForPDF.querySelector('button')?.remove();  // Remover o botão de "Baixar em PDF"
+
+            // Manter a configuração anterior com pequena margem
+            const options = {
+                margin: 10,  // Margem pequena
+                filename: 'curriculo.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 3 },  // Escala 3 para melhor resolução
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().from(contentForPDF).set(options).save();
+        }
+    </script>
+
+    <button onclick="downloadPDF()">Baixar em PDF</button>
+</body>
+
+</html>
